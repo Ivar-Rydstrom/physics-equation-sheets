@@ -1,0 +1,94 @@
+\documentclass[fleqn]{article}
+
+\title{\vspace{1mm}Physics 120}
+\date{}
+
+\usepackage[utf8]{inputenc} % not sure what this does
+\usepackage[letterpaper, margin=3mm]{geometry} % paper format
+\usepackage{mathtools} % lots of stuff
+\usepackage{amssymb} % some more obscure symbols
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float} % [H] support
+\usepackage{amsmath,amssymb,amsfonts,cancel}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\pagecolor{white}
+\setlength{\mathindent}{1pt}
+\usepackage{multicol}
+\setlength{\columnsep}{1mm}
+\usepackage{color}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+
+
+\begin{document}
+
+\newcommand{\myint}[4]{\int_{#1}^{#2} \!  #3  \, \mathrm{d} #4}
+\newcommand{\paren}[1]{\!\left({#1}\right)}
+\newcommand{\commutator}[2]{\left[ #1\, , #2\right]}
+\newcommand{\expec}[1]{\! \left\langle {#1}\right\rangle}
+\newcommand{\expect}[1]{\! \langle {#1}\rangle}
+\newcommand{\mysum}[3]{\sum_{#1}^{#2} \, #3 }
+\newcommand{\pdiv}[3]{ \frac{\partial^{#3}{#1}}{\partial{#2}^{#3} } }
+\newcommand{\deriv}[3]{ \frac{\mathrm{d}^{#3}{#1}}{\mathrm{d}{#2}^{#3} } }
+\newcommand{\braket}[1]{\!\left| #1 \right\rangle}
+\newcommand{\half}[0]{\frac{1}{2}}
+
+
+\section*{\centering \underline{Physics 104}}
+\begin{multicols*}{3}
+
+\subsection*{ \centering \underline{Taylor Expansion}:}
+\[f\paren{a+h} = \mysum{k=0}{\infty}{\frac{f^{\,\paren{k}}\paren{a}}{k!}h^{k}},\qquad h = \paren{x-a}\]
+\[f\paren{x} = \mysum{k=0}{\infty}{\frac{f^{\,\paren{k}}\paren{0}}{k!}x^{k}}\]
+\[e^{ix} = \cos\paren{x} + i\sin{x}\]
+
+\subsection*{ \centering \underline{Euler's Equations}:}
+\[  \left. \begin{array}{ll}
+              \mbox{\textbf{a.}} &  f = f\paren{y^\prime,x}\\
+             \mbox{\textbf{a1.}} & f = f\paren{y^\prime} \end{array} \right\} \pdiv{\!f}{y}{} - \deriv{}{x}{}\pdiv{\!f}{y^\prime}{} = 0\]
+\[\quad\!\!\mbox{\textbf{b.}}\quad \left. f = f\paren{y^\prime,x} \right\} \pdiv{\!f}{x}{} - \deriv{}{x}{}\!\!\left[f - y^\prime\pdiv{\!f}{y^\prime}{} \right] = 0 \]
+\[\mbox{Cylindrical d$s$} = \sqrt{\mathrm{d}r^2 + r^2\mathrm{d}\theta^2 + \mathrm{d}z^2}\]
+\[\mbox{explicit constraints (Lagrange Multipliers):}\]
+\[\qquad\pdiv{\!f}{y_{i}}{} - \deriv{}{x}{}\pdiv{\!f}{y^\prime_{i}}{} + \mysum{i}{}{\lambda\pdiv{g}{y}{}} = 0\]
+
+\subsection*{ \centering \underline{The Lagrange Equation}:}
+\[\mathcal{L} = T - U\]
+\[\pdiv{\mathcal{L}}{q_{i}}{} - \deriv{}{t}{}\pdiv{\mathcal{L}}{\dot{q}_{i}}{}=0\]
+
+\subsection*{ \centering \underline{The Hamiltonian Equation}:}
+\[\mathcal{H} = \mysum{k}{}{\dot{q}_{k}}P_{k} - \mathcal{L}, \quad P_{k} = \pdiv{\mathcal{L}}{\dot{q}_{k}}{}\]
+\[\pdiv{\mathcal{H}}{P_{k}}{} = \dot{q}_{k},\qquad -\pdiv{\mathcal{H}}{q_{k}}{} = \dot{P}_{k}\]
+\[E\mbox{ is conserved if $\mathcal{L}$ has no time dependence}\]
+
+\subsection*{ \centering \underline{Reference Frames}:}
+\begin{align*}
+m\vec{a}_{r} = &\, \vec{F}\\ 
+-&m\vec{\ddot{R}}_{T} \qquad\qquad \mbox{ (Trans. Accel.)}\\
+-&m\vec{\dot{\omega}}\times\vec{r} \quad\qquad \mbox{ (Rot. Accel.)} \\
+-&2m\vec{\omega}\times\vec{v}_r \qquad \mbox{ (Coriolis Effect)} \\
+-&m\vec{\omega}\times\paren{\vec{\omega} \times \vec{r}} \,\, \mbox{ (Centrifugal)}
+\end{align*}
+\subsection*{ \centering \underline{Rigid Body Motion}:}
+\[I_{ij} = \mysum{\alpha}{}{m_{\alpha}}\paren{\delta_{ij}}\]
+\[\mbox{(come back to this one)}\]
+\columnbreak
+
+
+% include image / plot / graph
+% pdf format preferred but any works
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics{example.pdf}
+% \end{figure}
+
+% include MATLAB code\input{../Documents/MATLAB/M174proj.m}
+
+\end{multicols*}
+
+\end{document}

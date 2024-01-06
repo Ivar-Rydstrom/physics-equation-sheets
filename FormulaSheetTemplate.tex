@@ -1,0 +1,73 @@
+\documentclass[fleqn]{article}
+
+\title{\vspace{1mm}Physics 120}
+\date{}
+
+\usepackage[utf8]{inputenc} % not sure what this does
+\usepackage[letterpaper, margin=3mm]{geometry} % paper format
+\usepackage{mathtools} % lots of stuff
+\usepackage{amssymb} % some more obscure symbols
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float} % [H] support
+\usepackage{amsmath,amssymb,amsfonts,cancel}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\pagecolor{white}
+\setlength{\mathindent}{1pt}
+\usepackage{multicol}
+\setlength{\columnsep}{1mm}
+\usepackage{color}
+%\setlength{\columnseprule}{1pt}
+%\def\columnseprulecolor{\color{black}}
+%uncomment above so you can see if you're going into the next column (if you care)
+
+\begin{document}
+
+\newcommand{\myint}[4]{\int_{#1}^{#2} \!  #3  \, \mathrm{d} #4}
+\newcommand{\paren}[1]{\!\left({#1}\right)}
+\newcommand{\commutator}[2]{\left[ #1\, , #2\right]}
+\newcommand{\expec}[1]{\! \left\langle {#1}\right\rangle}
+\newcommand{\expect}[1]{\! \langle {#1}\rangle}
+\newcommand{\mysum}[3]{\sum_{#1}^{#2} \, #3 }
+\newcommand{\pdiv}[3]{ \frac{\partial^{#3}{#1}}{\partial{#2}^{#3} } }
+\newcommand{\deriv}[3]{ \frac{\mathrm{d}^{#3}{#1}}{\mathrm{d}{#2}^{#3} } }
+\newcommand{\braket}[1]{\!\left| #1 \right\rangle}
+\newcommand{\half}[0]{\frac{1}{2}}
+%some commands I made, for derivatives you can leave #3 blank for first order
+
+
+\section*{\centering \underline{Title Goes Here}}
+\begin{multicols*}{3} %three columns
+\subsection*{ \centering \underline{Subsection 1}:}
+\[\pdiv{\mathcal{L}}{q_{i}}{} - \deriv{}{t}{}\pdiv{\mathcal{L}}{\dot{q}_{i}}{}=0\]
+%\columnbreak %these send you into the next column, in case formatting is an issue
+\subsection*{ \centering \underline{Subsection 2}:}
+\[\hat{H}\braket{\psi} = -\frac{\,\,\hbar^2}{2m}\pdiv{}{x}{2}\braket{\psi} + V\paren{x}\braket{\psi} = E\braket{\psi}\]
+\subsection*{ \centering \underline{Subsection 3}:}
+\[Z = \mysum{i}{}{g_{_i}e^{-E_{i}/k_{b}T}}\]
+\subsection*{ \centering \underline{You get the Idea}:}
+\[\oint_{\gamma} \!f(z)\, \mathrm{d}z = 2\pi i \!\mysum{z_k \in \,\gamma}{}{\!\!\mbox{Res}\paren{f;z_k}}\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{multicols*}
+
+\end{document}

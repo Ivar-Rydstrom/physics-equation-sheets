@@ -1,0 +1,153 @@
+\documentclass[fleqn]{article}
+
+\title{\vspace{1mm}Physics 121 and 122}
+\date{}
+
+\usepackage[utf8]{inputenc} % not sure what this does
+\usepackage[letterpaper, margin=3mm]{geometry} % paper format
+\usepackage{mathtools} % lots of stuff
+\usepackage{amssymb} % some more obscure symbols
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float} % [H] support
+\usepackage{amsmath,amssymb,amsfonts,cancel}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\pagecolor{white}
+\setlength{\mathindent}{1pt}
+\usepackage{multicol}
+\setlength{\columnsep}{1mm}
+\usepackage{color}
+%\setlength{\columnseprule}{1pt}
+%\def\columnseprulecolor{\color{black}}
+
+
+\begin{document}
+
+\newcommand{\myint}[4]{\int_{#1}^{#2} \!  #3  \, \mathrm{d} #4}
+\newcommand{\paren}[1]{\!\left({#1}\right)}
+\newcommand{\commutator}[2]{\left[ #1\, , #2\right]}
+\newcommand{\expec}[1]{\! \left\langle {#1}\right\rangle}
+\newcommand{\expect}[1]{\! \langle {#1}\rangle}
+\newcommand{\mysum}[3]{\sum_{#1}^{#2} \, #3 }
+\newcommand{\pdiv}[3]{ \frac{\partial^{#3}\!{#1}}{\partial{#2}^{#3} } }
+\newcommand{\deriv}[3]{ \frac{\mathrm{d}^{#3}\!{#1}}{\mathrm{d}{#2}^{#3} } }
+\newcommand{\braket}[1]{\!\left| #1 \right\rangle}
+\newcommand{\half}[0]{\frac{1}{2}}
+
+
+\section*{\centering \underline{Physics 121 and 122}}
+\begin{multicols*}{3}
+
+\subsection*{ \centering \underline{Statistics}:}
+\[ \expec{f\paren{j}} =  \mysum{j=0}{\infty}{f\paren{j}P\paren{j}}\]
+\[\expec{x} = \myint{-\infty}{\infty}{x\rho\paren{x}\!}{x}\]
+\[ \expec{f\paren{x}} = \myint{-\infty}{\infty}{f\paren{x}\!\rho\paren{x}\!}{x}\]
+\[ \expect{\hat{Q}} = \myint{-\infty}{\infty}{\psi^{\ast}\hat{Q}\psi}{x} = \langle \psi \vert \hat{Q} \vert \psi \rangle \]
+\[ \sigma^{2}  = \expect{\,\paren{\Delta j}^2} \]
+\[\sigma = \sqrt{\expec{j^2} - \expec{j}^2}\]
+\[P_{ab} = \myint{a}{b}{\rho\paren{x}\!}{x}\]
+\[ \myint{-\infty}{\infty}{\left\vert \Psi\paren{x} \right\vert^2}{x} = \expec{\psi \vert \psi} = 1 \mbox{ (if normalized)}\]
+
+\subsection*{ \centering \underline{Quantum Mechanics}:}
+\[\hat{p} = -i\hbar\pdiv{}{x}{} =  m\deriv{\,\expec{\hat{x}}}{t}{}  \]
+\[\hat{H} = -\frac{\,\,\hbar^2}{2m}\pdiv{}{x}{2} + V\paren{x} = \frac{\hat{p}^2}{2m} + V\]
+\[ \commutator{\hat{x}}{\hat{L}_{z}} = -i\hbar \hat{y} \mbox{ (cyclic permutations)}\]
+\[ \deriv{\,\expect{\hat{Q}}}{t}{} = \frac{i}{\hbar}\expec{\commutator{\hat{H}}{\hat{Q}}} + \expec{\pdiv{\,\hat{Q}}{t}{}}\]
+\[\hat{H}\braket{\psi} = E\braket{\psi}\]
+\[\commutator{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A}\]
+\[\commutator{\hat{x}}{\hat{p}} = i\hbar\]
+\[\sigma_{A}^{2}\sigma_{B}^{2} \geq \left| \frac{1}{2i} \expec{\commutator{\hat{A}}{\hat{B}}}\right|^2 \]
+\[\sigma_{x}^{2}\sigma_{p}^{2} \geq \frac{\hbar}{2}\]
+\[\commutator{\hat{A}}{f(\hat{B})} = \commutator{\hat{A}}{\hat{B}}\!f^\prime\!(\hat{B})\]
+\[\commutator{\hat{A}\hat{B}}{\hat{C}} = \hat{A}\!\commutator{\hat{B}}{\hat{C}} + \commutator{\hat{A}}{\hat{C}}\!\hat{B}\]
+\[\Psi\paren{x,t} = \mysum{n = 1}{\infty}{c_n\psi_n(x)e^{-i E_n t / \hbar}}\!\mbox{ (TISE sol.)}\]
+\[c_n = \myint{-\infty}{\infty}{\psi_n^{\ast}\!(x)f(x)}{x} \]
+
+
+%\columnbreak
+
+
+\subsection*{ \centering \underline{Infinite Square Well}:}
+\[ V(x) = \left\{ \begin{array}{ll} 0, & \mbox{$0 \leq x \leq a$,}\\ \infty, & \mbox{otherwise}\end{array} \right. \]
+\[\psi_{n}(x) = \sqrt{\frac{2}{a}}\sin\paren{\frac{n\pi}{a}x}\,\]
+\[E_{n} = \frac{n^2\pi^2\hbar^2}{2ma^2},\qquad n=1,2,3...\]
+             
+             
+\subsection*{ \centering \underline{Quantum Harmonic Oscillator}:}
+\[V = \half kx^2 =\half m\omega^2x^2\,,\qquad \omega \equiv \sqrt{\frac{k}{m}}\]
+\[\psi_{0}(x) = {\paren{\frac{m\omega}{\pi\hbar}}}^{\!\!\frac{1}{4}} e^{-\frac{m\omega}{2\hbar}x^2}\] 
+\[\hat{a}_{\pm} \equiv \frac{1}{\sqrt{2\hbar m\omega}}\paren{\mp i\hat{p} + m\omega \hat{x}},\, \commutator{\hat{a}_-}{\hat{a}_+}=1\]
+\[\psi_{n}(x) = \frac{1}{\sqrt{n!}}\paren{\hat{a}_{+}}^{n}\psi_{0}(x),\quad n=0,1,2,3...\]
+\[\hat{a}_{+}\psi_{n} = \sqrt{n+1}\,\psi_{n+1}\; ,\quad \hat{a}_{-}\psi_{n} = \sqrt{n}\,\psi_{n-1}\]
+\[\hat{x} = \sqrt{\frac{\hbar}{2m\omega}}\paren{\hat{a}_{+} + \hat{a}_{-}}\]
+\[ \hat{p} = i\sqrt{\frac{\hbar m\omega}{2}}\paren{\hat{a}_{+} - \hat{a}_{-}}\]
+\[E_n = \paren{n +\half }\!\hbar\omega\]
+\[\hat{H}\psi = \hbar\omega\paren{\hat{a}_{\pm}\hat{a}_{\mp} \pm \half}\!\psi = E\psi\]
+
+\subsection*{ \centering \underline{Quantum Free Particle}:}
+\[V = 0;\quad \hat{H}= E\psi \Rightarrow \pdiv{\,\psi}{x}{2} = -\paren{\frac{\sqrt{2mE}}{\hbar}}^{\!\!2}\!\!\psi\]
+\[k = \frac{\sqrt{2mE}}{\hbar}\]
+\[ \Psi(x,t) = Ae^{ik\,\paren{x-\frac{\hbar k}{2m}t}} + Be^{-ik\,\paren{x+\frac{\hbar k}{2m}t}}\]
+\[\Psi(x,t) = \frac{1}{\sqrt{2\pi}}\myint{-\infty}{\infty}{\phi(k)e^{ik\,\paren{x-\frac{\hbar k}{2m}t}}}{k}\]
+\[\phi(k) = \frac{1}{\sqrt{2\pi}}\myint{-\infty}{\infty}{\Psi(x,0)e^{-ikx}}{x}\]
+\[T = \frac{\vert \mbox{coeff out}\vert^2}{\vert\mbox{coeff in}\vert^2}\, ,\qquad R = \frac{\vert \mbox{coeff back}\vert^2}{\vert\mbox{coeff in}\vert^2}\]
+\[R + T = 1\]
+\[\mbox{Bound State }(E<0)\!: E<V(x)\mbox{, }x\rightarrow\infty\]
+\[\mbox{Scattering State }(E>0)\!: E>V(x)\mbox{, }x\rightarrow\infty\]
+
+\subsection*{ \centering \underline{Plancherel's Theorem}:}
+\[\Phi(p,t) = \frac{1}{\sqrt{2\pi\hbar}}\myint{-\infty}{\infty}{\Psi(x,t)e^{-ipx/\hbar}}{x}\]
+\[\Psi(x,t) = \frac{1}{\sqrt{2\pi\hbar}}\myint{-\infty}{\infty}{\Phi(p,t)e^{ipx/\hbar}}{p}\]
+
+\columnbreak
+\subsection*{ \centering \underline{3D Quantum Mechanics}:}
+\[i\hbar\pdiv{\,\Psi}{t}{}=-\frac{\,\,\hbar^2}{2m}\nabla^2\Psi + V\Psi\]
+\[-\frac{\,\,\hbar^2}{2m}\nabla^2\psi + V\psi = E\psi\]
+\[-\frac{\,\,\hbar^2}{2m}\deriv{\,u}{r}{2} + \left[ V + \frac{\,\,\hbar^2}{2m}\frac{\ell(\ell+1)}{r^2}\right]\!\!u = Eu\]
+\[\psi_{n\ell m}(r,\theta,\phi) = R_{n\ell}(r)Y^{m}_{\ell}(\theta,\phi)\]
+\[Y_{\ell}^{m}(\theta,\phi) = \sqrt{\frac{(2\ell + 1)}{4\pi}\frac{(\ell - m)!}{(\ell + m)!}}e^{im\phi}P^{m}_{\ell}\!(\cos\theta)\]
+\[P^{m}_{\ell}(x) \equiv (-1)^{m}(1-x)^{\frac{m}{2}}\!\paren{\deriv{}{x}{}}^{\!\!m}\!\!P_{\ell}(x)\]
+\[P_{\ell}(x)\equiv\frac{1}{2^\ell \ell!}\paren{\deriv{}{x}{}}^{\!\ell}\!\paren{x^2-1}^\ell\]
+
+\subsection*{ \centering \underline{The Hydrogen Atom}:}
+\[V(r) = -\frac{e^2}{4\pi\varepsilon_0r}\]
+\[\alpha = \frac{e^2}{4\pi\varepsilon_0\hbar c} \approx 1/137\]
+\[a_0 = \frac{4\pi\varepsilon_0\hbar^2}{m_{e}e^2} = \frac{\hbar}{\alpha m_{e}c}\approx 5.29177 \times 10^{-11}\mbox{ m}\]
+\[-E_1 = \frac{\hbar^2}{2m_{e}a_{0}^2} = \frac{\alpha^2m_{e}c^2}{2} \approx 13.6057 \mbox{ eV}\]
+\[E_n=\frac{E_1}{n^2},\qquad n=1,2,3...\]
+\[\psi_{100}(r,\theta,\phi) = \frac{1}{\sqrt{\pi a_{0}^3}}e^{-r/a_{0}}\]\begin{align}
+\psi_{n\ell m}&(r,\theta,\phi) = \sqrt{\paren{\frac{2}{na_{0}}}^{\!\!3}\frac{(n-\ell-1)!}{2n(n+\ell)!}}e^{-r/na_{0}} \nonumber\\
+&\times\paren{\frac{2r}{na_{0}}}^{\!\!\ell}\left[L^{2\ell+1}_{n-\ell-1}\paren{\frac{2r}{na_{0}}}\right]Y^{m}_{\ell}(\theta,\phi) \nonumber
+\end{align}
+\[L^{p}_{q}(x) \equiv (-1)^{p}\paren{\deriv{}{x}{}}^{\!\!p}L_{p+q}(x) \]
+\[L_{q}(x)\equiv \frac{e^x}{q!}\paren{\deriv{}{x}{}}^{\!\!q}\paren{e^{-x}x^q}\]
+\[R_{n\ell}(r) = \frac{1}{r}\rho^{\,\ell+1}e^{-\rho}v(\rho)\]
+\[v(\rho) = \mysum{j=0}{\infty}{c_{j}\rho^{\,j}},\,\,\, c_{j+1} = \frac{2\paren{j+\ell+1-n}}{\paren{j+1}\paren{j+2\ell+2}}c_{j}\]
+
+
+
+
+
+
+
+
+
+
+
+% include image / plot / graph
+% pdf format preferred but any works
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics{example.pdf}
+% \end{figure}
+
+% include MATLAB code\input{../Documents/MATLAB/M174proj.m}
+
+\end{multicols*}
+
+\end{document}
