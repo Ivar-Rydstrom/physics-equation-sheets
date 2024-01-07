@@ -1,0 +1,101 @@
+\documentclass[fleqn]{article}
+
+\title{\vspace{1mm}Physics 32}
+\date{}
+
+\usepackage[utf8]{inputenc} % not sure what this does
+\usepackage[letterpaper, margin=3mm]{geometry} % paper format
+\usepackage{mathtools} % lots of stuff
+\usepackage{amssymb} % some more obscure symbols
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float} % [H] support
+\usepackage{amsmath,amssymb,amsfonts,cancel}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\pagecolor{white}
+\setlength{\mathindent}{1pt}
+\usepackage{multicol}
+\setlength{\columnsep}{1mm}
+\usepackage{color}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+%uncomment above so you can see if you're going into the next column (if you care)
+
+\begin{document}
+
+\newcommand{\myint}[4]{\int_{#1}^{#2} \!  #3  \, \mathrm{d} #4}
+\newcommand{\paren}[1]{\!\left({#1}\right)}
+\newcommand{\commutator}[2]{\left[ #1\, , #2\right]}
+\newcommand{\expec}[1]{\! \left\langle {#1}\right\rangle}
+\newcommand{\expect}[1]{\! \langle {#1}\rangle}
+\newcommand{\mysum}[3]{\sum_{#1}^{#2} \, #3 }
+\newcommand{\pdiv}[3]{ \frac{\partial^{#3}{#1}}{\partial{#2}^{#3} } }
+\newcommand{\deriv}[3]{ \frac{\mathrm{d}^{#3}{#1}}{\mathrm{d}{#2}^{#3} } }
+\newcommand{\braket}[1]{\!\left| #1 \right\rangle}
+\newcommand{\half}[0]{\frac{1}{2}}
+%some commands I made, for derivatives you can leave #3 blank for first order
+
+
+\section*{\centering \underline{Physics 32}}
+\begin{multicols*}{3} %three columns
+\subsection*{ \centering \underline{Gravity \& Kepler's Laws}:}
+\[ F_g = G \frac{M_a M_b}{r^2}, \qquad U_g = -G \frac{M_a M_b}{r}\]
+\[ G = 6.67x10^{-11} \]
+\raggedright
+    {\textbf{First Law:} Elliptical orbits\linebreak
+    \textbf{Second Law:} Equal areas swept over equal times (conservation of angular momentum)\linebreak
+    \textbf{Third Law:} Law of Periods: \( T^2 \propto R^3 \)
+    }
+%\columnbreak %these send you into the next column, in case formatting is an issue
+
+\subsection*{ \centering \underline{Oscillations}:}
+\[ F_k = -kX \qquad U_k = \frac{1}{2}kx^2 \]
+\[ x(t) = x_{max}\cos{(\omega t + \Phi)} \]
+\[ \deriv{x}{t}{2} = -\omega^2x \qquad T = \frac{2\pi}{\omega_0} \]
+\[ \textbf{Spring:} \quad T = 2\pi \sqrt{\frac{m}{k}} \]
+\[ \textbf{Pendulum:} \quad T = 2\pi\sqrt{\frac{\ell}{g}} \]
+\[ x_{damped}(t) = x_{max}e^{-bt/2m}\cos{(\omega^\prime + \Phi)} \]
+\[ \omega^\prime = \sqrt{\frac{k}{m} - \frac{b^2}{4m^2}} \]
+
+\subsection*{ \centering \underline{Fluid Dynamics}:}
+\[ \textbf{Pascal's Principle:} \; \Delta P = \frac{F}{A}, \quad\frac{F_1}{A_1} = \frac{F_2}{A_2} \]
+\[ P_2 - P_1 = \rho g(h_2 - h_1) \Rightarrow dP = \rho gdh \]
+\[ F_{buoyant} = m_{fluid}g = \rho_{fluid}V_{displaced}g \]
+\[ \textbf{Continuity Eq:} \quad A_1V_1 = A_2V_2 = \frac{Vol}{t} \]
+\[ \textbf{Bernoulli's Eq:} \quad P + \rho gh + \frac{1}{2}\rho V^2 = Const\]
+
+\subsection*{ \centering \underline{Waves}:}
+\[ v = \lambda f, \quad T = \frac{1}{f}, \quad \omega = \frac{2\pi}{T}, \quad k = \frac{2\pi}{\lambda} \]
+\[ V = \frac{\lambda}{T} = \lambda f = \boxed{\frac{\omega}{k}} \quad Secret \; Equation!\]
+\[ v_{string} = \sqrt{\frac{F_T}{\mu}}, \quad F_T = Tension, \quad \mu = \frac{m}{\ell} \]
+\[ v_{fluid} = \sqrt{\frac{Bs}{\rho}}, \quad v_{solid} = \sqrt{\frac{E}{\rho}} \]
+\(E/B\) = Elastic/Bulk Moduli.\linebreak
+\[ E_{wave} = 2\pi^2 f^2 \rho (vtArea) {x_{max}}^2 \]
+\[ I_{intensity} = \frac{Power}{Area} \]
+\[ y_{traveling}(x,t) = y_{max}\sin{(kx \mp \omega t)} \]
+(Minus for +x, plus for -x propagation)
+\[ \textbf{Wave Equation:} \quad \pdiv{y}{x}{2} = \frac{1}{v^2}\left(\pdiv{y}{t}{2}\right) \]
+
+\subsection*{ \centering \underline{Sound}: }
+\[ f_{beat} = |f_1-f_2| \]
+\[ \beta = 10\log{\left(\frac{I}{I_0}\right)}, \qquad I_0 = 10^{-12} \frac{w}{m^2} \]
+\[ \boxed{\beta = 20\log{\left(\frac{y_{max}}{I_0}\right)}} \quad Secret \; Equation! \]
+\[ f_{observer} = f_{source}\left(\frac{v_{sound}\pm v_{obs}}{v_{sound}\mp v_{source}}\right) \]
+\[ Pick \quad +v_{obs} = Towards, \quad -v_{obs} = Away \]
+
+\subsection*{ \centering \underline{Light and Optics}: }
+\[ Reflection: \quad \theta_i = \theta_f \]
+\[ Refraction \, (Snell's): \; n_0\sin{\theta_0} = n_f\sin{\theta_f} \]
+\[ \textbf{Double Slit:} \quad d\sin{\theta} = m\lambda \]
+\[ m_{bright} = 1, 2, 3..., \quad m_{dark} = \frac{1}{2}, \frac{3}{2}, \frac{5}{2}... \]
+\[ (Use \; small \; angle \; approx: \quad \tan{\theta} = \frac{y}{D}) \]
+\[ 2d = (m + \frac{1}{2})\lambda^\prime + (m + \frac{1}{2})\frac{\lambda}{n^\prime} \]
+
+\end{multicols*}
+
+\end{document}
